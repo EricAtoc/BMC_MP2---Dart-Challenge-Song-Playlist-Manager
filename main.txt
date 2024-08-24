@@ -1,0 +1,96 @@
+import 'dart:math';
+
+// Define the Song class
+class Song {
+  final String title;
+  final String artist;
+
+  // Constructor
+  Song(this.title, this.artist);
+
+  // Method to display song details
+  void showDetails() {
+    print('$title by $artist');
+  }
+}
+
+// Define the Playlist class
+class Playlist {
+  final String name;
+  final List<Song> songs;
+
+  // Constructor
+  Playlist(this.name, this.songs);
+
+  // Method to display the playlist name and its songs
+  void showPlaylist() {
+    print('Playlist: $name');
+    for (var song in songs) {
+      song.showDetails();
+    }
+  }
+}
+
+// Define the MusicFestival class
+class MusicFestival {
+  // Method to display the list of rock songs
+  void showRockSongs() {
+    print('Rock Songs:');
+    final rockSongs = [
+      Song('Bohemian Rhapsody', 'Queen'),
+      Song('Stairway to Heaven', 'Led Zeppelin'),
+      Song('Hotel California', 'Eagles'),
+      Song('Sweet Child O\' Mine', 'Guns N\' Roses'),
+      Song('Back In Black', 'AC/DC')
+    ];
+    for (var song in rockSongs) {
+      song.showDetails();
+    }
+  }
+
+  // Method to display the list of jazz songs
+  void showJazzSongs() {
+    print('Jazz Songs:');
+    final jazzSongs = [
+      Song('So What', 'Miles Davis'),
+      Song('Take Five', 'Dave Brubeck'),
+      Song('My Favorite Things', 'John Coltrane'),
+      Song('What a Wonderful World', 'Louis Armstrong'),
+      Song('In a Sentimental Mood', 'Duke Ellington')
+    ];
+    for (var song in jazzSongs) {
+      song.showDetails();
+    }
+  }
+
+  // Method to display the list of hip-hop songs
+  void showHipHopSongs() {
+    print('Hip-Hop Songs:');
+    final hipHopSongs = [
+      Song('Lose Yourself', 'Eminem'),
+      Song('Juicy', 'The Notorious B.I.G.'),
+      Song('N.Y. State of Mind', 'Nas'),
+      Song('HUMBLE.', 'Kendrick Lamar'),
+      Song('Sicko Mode', 'Travis Scott')
+    ];
+    for (var song in hipHopSongs) {
+      song.showDetails();
+    }
+  }
+}
+
+void main() {
+  // Create an instance of MusicFestival
+  final musicFestival = MusicFestival();
+
+  // Display welcome message
+  print('Welcome to the Music Festival Playlist Manager!');
+  print(' ');
+
+  // Display the playlists
+  musicFestival.showRockSongs();
+  print(' ');
+  musicFestival.showJazzSongs();
+  print(' ');
+  musicFestival.showHipHopSongs();
+}
